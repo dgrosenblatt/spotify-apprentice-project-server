@@ -8,5 +8,11 @@ describe 'songs endpoints' do
       expect(response).to have_http_status :ok
       expect(response).to match_response_schema :songs
     end
+
+    it 'returns an empty list of songs' do
+      get(songs_url, {}, accept_headers)
+      expect(response).to have_http_status :ok
+      expect(response).to match_response_schema :songs
+    end
   end
 end
