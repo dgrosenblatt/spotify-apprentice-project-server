@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609174024) do
+ActiveRecord::Schema.define(version: 20150609191815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "artists", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+  create_table "artists", id: :uuid, default: nil, force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "name"
@@ -42,5 +42,14 @@ ActiveRecord::Schema.define(version: 20150609174024) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+
+  create_table "songs", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.string   "artist"
+    t.string   "album"
+    t.integer  "duration"
+  end
 
 end
