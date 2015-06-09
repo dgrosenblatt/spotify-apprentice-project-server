@@ -320,3 +320,6 @@ DEPENDENCIES
   versionist
   web-console
   webmock
+
+BUNDLED WITH
+   1.10.3
