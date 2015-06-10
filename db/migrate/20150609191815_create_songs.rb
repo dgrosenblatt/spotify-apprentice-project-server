@@ -1,7 +1,5 @@
 class CreateSongs < ActiveRecord::Migration
-  def change
-    enable_extension 'uuid-ossp'
-
+  def change    
     create_table :songs, id: :uuid do |t|
       t.timestamps null: false
 
@@ -9,6 +7,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :artist
       t.string :album
       t.integer :duration
+      t.string :spotify_uri
     end
   end
 end
