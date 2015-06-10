@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://spotify-apprentice-app.com",
+  "type": "object",
+  "properties": {
+    "song": {
+      "id": "http://spotify-apprentice-app.com/song",
+      "type": "object",
+      "properties": {
+        "id": {
+          "id": "http://spotify-apprentice-app.com/song/id",
+          "type": "string"
+        },
+        "title": {
+          "id": "http://spotify-apprentice-app.com/song/title",
+          "type": "string"
+        },
+        "artist": {
+          "id": "http://spotify-apprentice-app.com/song/artist",
+          "type": "string"
+        },
+        "album": {
+          "id": "http://spotify-apprentice-app.com/song/album",
+          "type": "string"
+        },
+        "duration": {
+          "id": "http://spotify-apprentice-app.com/song/duration",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "artist",
+        "album",
+        "duration"
+      ]
+    }
+  },
+  "required": [
+    "song"
+  ]
+}
