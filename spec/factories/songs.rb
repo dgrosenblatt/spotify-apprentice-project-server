@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :song do
-    title 'Paranoid Android'
+    sequence(:title) { |n| "2 + 2 = #{n}" }
     artist 'Radiohead'
-    album 'OK Computer'
+    album 'Hail to the Thief'
     duration 325
+    spotify_uri { SecureRandom.hex(10) }
   end
-
 end
