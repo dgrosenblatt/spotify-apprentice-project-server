@@ -68,6 +68,10 @@
         "artist_id": {
           "id": "http://spotify-apprentice-app.com/song/artist_id",
           "type": "string"
+        },
+        "full_title": {
+          "id": "http://spotify-apprentice-app.com/song/title",
+          "type": "string"
         }
       }
     }

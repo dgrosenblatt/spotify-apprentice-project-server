@@ -1,5 +1,5 @@
 class SongSerializer < ActiveModel::Serializer
-  attributes :id, :title, :album, :duration
+  attributes :id, :title, :album, :duration, :full_title
 
   embed :ids
 
