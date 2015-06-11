@@ -42,10 +42,7 @@
           "spotify_uri",
           "song_ids"
         ]
-      },
-      "required": [
-        "0"
-      ]
+      }
     },
     "songs": {
       "id": "http://spotify-apprentice-app.com/songs",
@@ -74,7 +71,13 @@
             "id": "http://spotify-apprentice-app.com/songs/0/artist_id",
             "type": "string"
           }
-        }
+        },
+        "required": [
+          "id",
+          "title",
+          "album",
+          "duration"
+        ]
       }
     }
   },

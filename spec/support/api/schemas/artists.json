@@ -32,7 +32,8 @@
             "items": {
               "id": "http://spotify-apprentice-app.com/artists/0/song_ids/0",
               "type": "string"
-            }
+            },
+            "minItems": 0
           }
         },
         "required": [
@@ -42,10 +43,7 @@
           "spotify_uri",
           "song_ids"
         ]
-      },
-      "required": [
-        "0"
-      ]
+      }
     }
   },
   "required": [
