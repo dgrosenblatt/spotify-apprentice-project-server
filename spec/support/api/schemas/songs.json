@@ -76,7 +76,8 @@
           "id",
           "title",
           "album",
-          "duration"
+          "duration",
+          "artist_id"
         ]
       }
     }
