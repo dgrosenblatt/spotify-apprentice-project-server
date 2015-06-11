@@ -65,7 +65,7 @@
           },
           "duration": {
             "id": "http://spotify-apprentice-app.com/songs/0/duration",
-            "type": "integer"
+            "type": "string"
           },
           "artist_id": {
             "id": "http://spotify-apprentice-app.com/songs/0/artist_id",
