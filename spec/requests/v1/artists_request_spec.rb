@@ -16,27 +16,32 @@ describe 'artists endpoints' do
     context 'when there are more than 10 artists' do
       context 'when no per_page param is specified' do
         it 'returns JSON for 10 artists' do
-          artists = create_list(:artist, 100)
+          total_songs = 100
+
+          create_list(:artist, total_songs)
 
           get(artists_url, {}, accept_headers)
 
           expect(response).to have_http_status :ok
           expect(response).to match_response_schema :artists
-          expect(response.headers['Total']).to eq '100'
-          expect(response.headers['Per-Page']).to eq '10'
+          expect(paginated_total).to eq total_songs
+          expect(paginated_per_page).to eq 10
         end
       end
 
       context 'when a per_page param is specified' do
         it 'returns JSON for the number of artists requested' do
-          artists = create_list(:artist, 100)
+          total_songs = 100
+          per_page = 5
+
+          create_list(:artist, 100)
 
           get(artists_url, { per_page: 5 }, accept_headers)
 
           expect(response).to have_http_status :ok
           expect(response).to match_response_schema :artists
-          expect(response.headers['Total']).to eq '100'
-          expect(response.headers['Per-Page']).to eq '5'
+          expect(paginated_total).to eq total_songs
+          expect(paginated_per_page).to eq per_page
         end
       end
     end

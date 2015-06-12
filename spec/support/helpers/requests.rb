@@ -20,5 +20,13 @@ module Helpers
       { 'Accept' => accept_header,
         'Content-Type' => 'application/json' }
     end
+
+    def paginated_total
+      response.headers['Total'].to_i
+    end
+
+    def paginated_per_page
+      response.headers['Per-Page'].to_i
+    end
   end
 end
