@@ -42,6 +42,7 @@ GEM
     airbrake (4.2.1)
       builder
       multi_json
+    api-pagination (4.1.1)
     arel (6.0.0)
     autoprefixer-rails (5.2.0)
       execjs
@@ -133,6 +134,9 @@ GEM
     json (1.8.3)
     json-schema (2.5.1)
       addressable (~> 2.3.7)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.9.3)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -283,6 +287,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (= 0.8.3)
   airbrake
+  api-pagination
   autoprefixer-rails
   awesome_print
   bourbon (~> 4.2.0)
@@ -302,6 +307,7 @@ DEPENDENCIES
   i18n-tasks
   jquery-rails
   json-schema
+  kaminari
   launchy
   neat (~> 1.7.0)
   newrelic_rpm (>= 3.9.8)
