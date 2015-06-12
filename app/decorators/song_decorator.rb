@@ -1,7 +1,7 @@
 class SongDecorator < Draper::Decorator
   delegate_all
 
-  def duration_in_minutes_and_seconds
+  def formatted_duration
     "#{duration / 60}:#{duration % 60}"
   end
 

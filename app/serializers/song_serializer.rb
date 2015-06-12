@@ -1,5 +1,5 @@
 class SongSerializer < ActiveModel::Serializer
-  attributes :id, :title, :album, :duration, :full_title
+  attributes :id, :title, :album, :duration, :formatted_duration, :full_title
 
   embed :ids
 
@@ -9,8 +9,8 @@ class SongSerializer < ActiveModel::Serializer
     decorated_song.full_title
   end
 
-  def duration
-    decorated_song.duration_in_minutes_and_seconds
+  def formatted_duration
+    decorated_song.formatted_duration
   end
 
   def decorated_song

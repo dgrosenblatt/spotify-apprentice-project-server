@@ -65,7 +65,7 @@
           },
           "duration": {
             "id": "http://spotify-apprentice-app.com/songs/0/duration",
-            "type": "string"
+            "type": "integer"
           },
           "artist_id": {
             "id": "http://spotify-apprentice-app.com/songs/0/artist_id",
@@ -74,6 +74,10 @@
           "full_title": {
             "id": "http://spotify-apprentice-app.com/song/title",
             "type": "string"
+          },
+          "formatted_duration": {
+            "id": "http://spotify-apprentice-app.com/songs/0/duration",
+            "type": "string"
           }
         },
         "required": [
@@ -81,7 +85,8 @@
           "title",
           "album",
           "duration",
-          "artist_id"
+          "artist_id",
+          "formatted_duration"
         ]
       }
     }
