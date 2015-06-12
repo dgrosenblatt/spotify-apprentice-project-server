@@ -1,7 +1,7 @@
 class V1::SongsController < ApplicationController
   def index
     songs = Song.includes(:artist)
-    render json: songs, include: [:artist]
+    paginate json: songs, include: [:artist]
   end
 
   def show

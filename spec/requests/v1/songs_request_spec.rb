@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'songs endpoints' do
   describe 'GET /songs' do
-    context 'when there are many songs' do
+    context 'when there are 10 songs or fewer' do
       it 'returns JSON for all songs' do
         create_list(:song, 10)
 
@@ -10,6 +10,34 @@ describe 'songs endpoints' do
 
         expect(response).to have_http_status :ok
         expect(response).to match_response_schema :songs
+      end
+    end
+
+    context 'when there are more than 10 songs' do
+      context 'when no per_page param is specified' do
+        it 'returns JSON for 10 songs' do
+          create_list(:song, 100)
+
+          get(songs_url, {}, accept_headers)
+
+          expect(response).to have_http_status :ok
+          expect(response).to match_response_schema :songs
+          expect(response.headers['Total']).to eq '100'
+          expect(response.headers['Per-Page']).to eq '10'
+        end
+      end
+
+      context 'when a per_page param is specified' do
+        it 'returns JSON for the number of songs requested' do
+          create_list(:song, 100)
+
+          get(songs_url, { per_page: 5 }, accept_headers)
+
+          expect(response).to have_http_status :ok
+          expect(response).to match_response_schema :songs
+          expect(response.headers['Total']).to eq '100'
+          expect(response.headers['Per-Page']).to eq '5'
+        end
       end
     end
 
