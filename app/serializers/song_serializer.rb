@@ -5,7 +5,15 @@ class SongSerializer < ActiveModel::Serializer
 
   has_one :artist
 
+  def full_title
+    decorated_song.full_title
+  end
+
   def duration
-    object.duration_in_minutes_and_seconds
+    decorated_song.duration_in_minutes_and_seconds
+  end
+
+  def decorated_song
+    @decorated_song ||= object.decorate
   end
 end
