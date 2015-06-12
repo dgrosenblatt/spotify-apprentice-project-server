@@ -6,6 +6,6 @@ class SongDecorator < Draper::Decorator
   end
 
   def full_title
-    "#{song.artist.name} - #{song.title} - #{song.album}"
+    "#{artist.name} - #{title} - #{album}"
   end
 end
