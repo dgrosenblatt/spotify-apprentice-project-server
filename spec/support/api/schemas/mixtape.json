@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://spotify-apprentice-app.com",
+  "type": "object",
+  "properties": {
+    "mixtape": {
+      "id": "http://spotify-apprentice-app.com/mixtape",
+      "type": "object",
+      "properties": {
+        "songs": {
+          "id": "http://spotify-apprentice-app.com/mixtape/songs",
+          "type": "array",
+          "items": {
+            "id": "http://spotify-apprentice-app.com/mixtape/songs/0",
+            "type": "object",
+            "properties": {
+              "id": {
+                "id": "http://spotify-apprentice-app.com/mixtape/songs/0/id",
+                "type": "string"
+              },
+              "title": {
+                "id": "http://spotify-apprentice-app.com/mixtape/songs/0/title",
+                "type": "string"
+              },
+              "album": {
+                "id": "http://spotify-apprentice-app.com/mixtape/songs/0/album",
+                "type": "string"
+              },
+              "duration": {
+                "id": "http://spotify-apprentice-app.com/mixtape/songs/0/duration",
+                "type": "integer"
+              },
+              "formatted_duration": {
+                "id": "http://spotify-apprentice-app.com/mixtape/songs/0/formatted_duration",
+                "type": "string"
+              },
+              "full_title": {
+                "id": "http://spotify-apprentice-app.com/mixtape/songs/0/full_title",
+                "type": "string"
+              },
+              "artist_id": {
+                "id": "http://spotify-apprentice-app.com/mixtape/songs/0/artist_id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "album",
+              "duration",
+              "formatted_duration",
+              "full_title",
+              "artist_id"
+            ]
+          }
+        }
+      },
+      "required": [
+        "songs"
+      ]
+    }
+  },
+  "required": [
+    "mixtape"
+  ]
+}
