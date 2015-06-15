@@ -10,6 +10,7 @@ describe Song do
     it { should validate_presence_of :artist }
     it { should validate_presence_of :duration }
     it { should validate_numericality_of(:duration).is_greater_than(0) }
+    it { should validate_presence_of :genre }
     it { should validate_presence_of :spotify_uri }
     it { should validate_uniqueness_of :spotify_uri }
     it { should validate_presence_of :title }

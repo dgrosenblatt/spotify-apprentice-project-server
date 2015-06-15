@@ -5,5 +5,6 @@ FactoryGirl.define do
     duration 325
     spotify_uri { SecureRandom.hex(10) }
     artist
+    genre
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611182142) do
+ActiveRecord::Schema.define(version: 20150615120433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,12 @@ ActiveRecord::Schema.define(version: 20150611182142) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "genres", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
   create_table "songs", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -51,10 +57,13 @@ ActiveRecord::Schema.define(version: 20150611182142) do
     t.integer  "duration"
     t.string   "spotify_uri"
     t.uuid     "artist_id"
+    t.uuid     "genre_id"
   end
 
   add_index "songs", ["artist_id"], name: "index_songs_on_artist_id", using: :btree
+  add_index "songs", ["genre_id"], name: "index_songs_on_genre_id", using: :btree
   add_index "songs", ["title", "album"], name: "index_songs_on_title_and_album", unique: true, using: :btree
 
   add_foreign_key "songs", "artists"
+  add_foreign_key "songs", "genres"
 end
