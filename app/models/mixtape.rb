@@ -9,7 +9,8 @@ class Mixtape
   end
 
   def pick_songs(genre)
-    Song.includes(:genre, :artist)
+    Song.order_by_rand
+        .includes(:genre, :artist)
         .joins(:genre, :artist)
         .where("lower(genres.name) = ?", genre.downcase)
   end
