@@ -3,15 +3,8 @@ class Mixtape
 
   attr_reader :songs
 
-  def initialize(genre)
+  def initialize(genre:,songs:)
     @genre = genre
-    @songs = pick_songs(@genre)
-  end
-
-  def pick_songs(genre)
-    Song.order_by_rand
-        .includes(:genre, :artist)
-        .joins(:genre, :artist)
-        .where("lower(genres.name) = ?", genre.downcase)
+    @songs = songs
   end
 end
