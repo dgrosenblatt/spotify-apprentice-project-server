@@ -3,8 +3,7 @@ class Mixtape
 
   attr_reader :songs
 
-  def initialize(genre:,songs:)
-    @genre = genre
+  def initialize(songs:)
     @songs = songs
   end
 end
