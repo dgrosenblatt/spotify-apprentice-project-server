@@ -10,9 +10,13 @@ describe 'mixtape endpoints' do
         expect(response).to match_response_schema :mixtape
       end
     end
-    context 'with multiple genres specified' do
-    end
-    context 'with multiple genres and a time specified' do
+    context 'with a genre and time in seconds specified' do
+      it 'responds with JSON for a mixtape' do
+        get(mixtape_url, { genre: 'blues', time: 3600 }, accept_headers)
+
+        expect(response).to have_http_status :ok
+        expect(response).to match_response_schema :mixtape
+      end
     end
   end
 end

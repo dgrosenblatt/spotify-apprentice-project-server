@@ -78,6 +78,10 @@
           "formatted_duration": {
             "id": "http://spotify-apprentice-app.com/songs/0/duration",
             "type": "string"
+          },
+          "genre_id": {
+            "id": "http://spotify-apprentice-app.com/song/title",
+            "type": "string"
           }
         },
         "required": [
