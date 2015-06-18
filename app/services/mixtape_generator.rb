@@ -1,18 +1,26 @@
 class MixtapeGenerator
-  attr_reader :genre_name, :time
-
-  def initialize(genre_name:, time: 3600)
+  def initialize(genre_name:, time:)
     @genre_name = genre_name
     @time = time
   end
 
-  def self.perform(genre_name:, time: 3600)
+  def self.perform(genre_name:, time:)
     new(genre_name: genre_name, time: time).perform
   end
 
   def perform
     Mixtape.new(songs: pick_songs)
   end
+
+  def genre_name
+    @genre_name ||= Genre.random.name
+  end
+
+  def time
+    @time ||= 3600
+  end
+
+  private
 
   def pick_songs
     Song.includes(:genre, :artist).where('songs.id in (?)', song_ids)
