@@ -41,6 +41,10 @@
               "artist_id": {
                 "id": "http://spotify-apprentice-app.com/mixtape/songs/0/artist_id",
                 "type": "string"
+              },
+              "genre_id": {
+                "id": "http://spotify-apprentice-app.com/mixtape/songs/0/artist_id",
+                "type": "string"
               }
             },
             "required": [
@@ -58,9 +62,67 @@
       "required": [
         "songs"
       ]
+    },
+    "genres": {
+      "id": "http://spotify-apprentice-app.com/mixtape/genres",
+      "type": "array",
+      "items": {
+        "id": "http://spotify-apprentice-app.com/mixtape/genres/0",
+        "type": "object",
+        "properties": {
+          "id": {
+            "id": "http://spotify-apprentice-app.com/mixtape/genres/0/id",
+            "type": "string"
+          },
+          "name": {
+            "id": "http://spotify-apprentice-app.com/mixtape/genres/0/name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    },
+    "artists": {
+      "id": "http://spotify-apprentice-app.com/artists",
+      "type": "array",
+      "items": {
+        "id": "http://spotify-apprentice-app.com/artists/0",
+        "type": "object",
+        "properties": {
+          "id": {
+            "id": "http://spotify-apprentice-app.com/artists/0/id",
+            "type": "string"
+          },
+          "name": {
+            "id": "http://spotify-apprentice-app.com/artists/0/name",
+            "type": "string"
+          },
+          "description": {
+            "id": "http://spotify-apprentice-app.com/artists/0/description",
+            "type": "string"
+          },
+          "spotify_uri": {
+            "id": "http://spotify-apprentice-app.com/artists/0/spotify_uri",
+            "type": "string"
+          },
+          "song_ids": {
+            "id": "http://spotify-apprentice-app.com/artists/0/song_ids",
+            "type": "array",
+            "items": {
+              "id": "http://spotify-apprentice-app.com/artists/0/song_ids/0",
+              "type": "string"
+            }
+          }
+        }
+      }
     }
   },
   "required": [
-    "mixtape"
+    "mixtape",
+    "genres",
+    "artists"
   ]
 }
