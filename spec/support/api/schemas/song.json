@@ -70,16 +70,16 @@
           "type": "string"
         },
         "full_title": {
-          "id": "http://spotify-apprentice-app.com/song/title",
+          "id": "http://spotify-apprentice-app.com/song/full_title",
           "type": "string"
         },
         "formatted_duration": {
-          "id": "http://spotify-apprentice-app.com/song/title",
+          "id": "http://spotify-apprentice-app.com/song/formatted_duration",
           "type": "string"
         },
         "genre_id": {
-          "id": "http://spotify-apprentice-app.com/song/title",
-          "type": "string"
+          "id": "http://spotify-apprentice-app.com/song/genre_id",
+          "type": ["string", "null"]
         }
       }
     }
