@@ -4,6 +4,7 @@ class SongSerializer < ActiveModel::Serializer
   embed :ids
 
   has_one :artist
+  has_one :genre
 
   def full_title
     decorated_song.full_title
