@@ -46,4 +46,31 @@ describe 'artists endpoints' do
       end
     end
   end
+
+  describe 'POST /artists' do
+    context 'when required fields are provided' do
+      it 'creates an artist' do
+        expect{
+          post(artists_url, valid_artist_params, accept_headers)
+        }.to change{ Artist.count }.by(1)
+      end
+      
+      it 'returns JSON for an artist' do
+      post(artists_url, valid_artist_params, accept_headers)
+
+      expect(response).to have_http_status :created
+      expect(response).to match_response_schema :artist
+      end
+    end
+  end
+end
+
+def valid_artist_params
+  {
+    artist: {
+      name: "The Rolling Stones",
+      description: "A rock band from England",
+      spotify_uri: "http://spotify.com/rolling-stones"
+    }
+  }.to_json
 end
