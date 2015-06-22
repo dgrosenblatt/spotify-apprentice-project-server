@@ -11,7 +11,7 @@ class V1::ArtistsController < ApplicationController
     if artist.save
       render json: artist, include: [:songs], status: 201
     else
-      render json: { errors: artist.errors.full_messages }, status: 422
+      render_errors(artist)
     end
   end
 
